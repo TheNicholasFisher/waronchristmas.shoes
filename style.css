@@ -1,0 +1,252 @@
+@import url('http://fonts.cdnfonts.com/css/earwig-factory');
+@font-face{
+    font-family:Supply;
+    src:local("Supply-regular"),url(fonts/supply-regular.34ae648.woff2) format("woff2");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:Supply;
+    src:local("Supply-Bold"),url(fonts/supply-bold.97e2d2d.woff2) format("woff2");
+    font-weight:700;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:Earwig Factory;
+    src:local("Earwig-Factory"),url(fonts/earwig-factory.f48d78c.woff2) format("woff2");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap
+}
+:root{
+    --blue:#1038d6;
+    --red:#df383c;
+    --off-white:#fff1e4;
+    --dark:#222;
+    --grey:#b3aba4;
+    --color-hover:#f1e6e3;
+    --font-base:"Supply","Courier","Courier New",monospace,Arial,-apple-system,BlinkMacSystemFont;
+    --font-title:"Earwig Factory","Impact",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --ease-in:cubic-bezier(0.895,0.03,0.685,0.22);
+    --ease-out:cubic-bezier(0.165,0.84,0.44,1);
+    --ease-in-out:cubic-bezier(0.64,0.04,0.35,1);
+    --ease-bounce:cubic-bezier(0.175,0.885,0.32,1.275);
+    --d-fast:0.125s;
+    --d-normal:0.25s;
+    --d-slow:0.5s;
+    --d-slower:1.5s;
+    --d-slowest:2.25s
+}
+*,:after,:before{
+    box-sizing:border-box;
+    margin:0
+}
+html{
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust:100%;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden
+}
+body{
+    background-color:#fff1e4;
+    background-color:var(--off-white);
+    font-family:Supply,Courier,Courier New,monospace,Arial,-apple-system,BlinkMacSystemFont;
+    font-family:var(--font-base);
+    font-size:16px;
+    line-height:1.25;
+    text-transform:uppercase;
+    background-color:var(--off-white);
+}
+img{
+    max-width:100%
+}
+a{
+    text-decoration:none
+}
+a:focus{
+    outline:0
+}
+h1,h2,h3,h4,h5,h6{
+    font-family:Earwig Factory,Impact,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    font-family:var(--font-title);
+    line-height:1;
+    font-weight:400;
+    color:#df383c;
+}
+button{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    padding:0;
+    background:0 0;
+    border:0;
+    outline:0;
+    font-size:inherit;
+    font-weight:inherit;
+    font-family:inherit;
+    color:#fff1e4;
+    color:var(--off-white);
+    text-transform:uppercase;
+    cursor:pointer
+}
+button::-moz-focus-inner{
+    border:0;
+    padding:0
+}
+button:focus{
+    outline:0
+}
+button,input,select,textarea{
+    font:Supply,Courier,Courier New,monospace,Arial,-apple-system,BlinkMacSystemFont;
+    font:var(--font-base)
+}
+@media (prefers-reduced-motion:reduce){
+    *{
+        -webkit-animation-duration:NaNs!important;
+        animation-duration:NaNs!important;
+        -webkit-animation-iteration-count:1!important;
+        animation-iteration-count:1!important;
+        transition-duration:NaNs!important;
+        scroll-behavior:auto!important
+    }
+}
+
+main{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center
+}
+.sticky-wrapper{
+    position:-webkit-sticky;
+    position:sticky;
+    bottom:0;
+    width:100%;
+    background:var(--blue);
+    color:var(--off-white);
+    padding:10px
+}
+.sticky-wrapper .button{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:4px;
+    width:100%;
+    border:1px solid var(--off-white);
+    border-radius:1px;
+    color:var(--off-white)
+}
+.sticky-wrapper .button:hover{
+    background:var(--red)
+}
+.sticky-wrapper .lines{
+    flex:0 1 49px;
+    margin:0 5px
+}
+.sticky-wrapper span{
+    margin:0 30px
+}
+header{
+    position:-webkit-sticky;
+    position:sticky;
+    top:14px;
+    margin:14px 0 0;
+    color:var(--blue)
+}
+.title{
+    margin:10vh clamp(5px,8vw,20px) 15vh;
+    font-size:clamp(10px,8vw,320px);
+    line-height:clamp(50px,10vw,240px)
+}
+.char{
+    visibility: visible;
+    -webkit-animation: scale calc(var(--char-index)*.12s) 1;
+}
+
+@-webkit-keyframes scale  {
+    0%{
+        visibility: hidden;
+    }
+    99%{
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+.char:nth-child(odd){
+    color:var(--blue)
+}
+.char:nth-child(2n){
+    color:var(--red)
+}
+footer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:0 50px;
+    padding-top: 70px;
+    font-family: Supply;
+    font-size: 15px;
+    line-height: 18px;
+}
+footer p{
+    margin-bottom:10vh
+}
+footer p:first-child{
+    position:relative;
+    color:var(--blue)
+}
+footer p:first-child a{
+    color:var(--blue);
+    text-decoration:underline
+}
+footer p:first-child a:hover{
+    color:var(--red)
+}
+footer p:first-child:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(100%,-100%);
+    content: url(face.svg);
+}
+.tweet{
+    display:inline-block;
+    margin:14px 0 0;
+    padding:15px 24px 17px;
+    color:var(--off-white);
+    background:var(--red)
+}
+.tweet:hover{
+    background:var(--blue)
+}
+.logo,.what-is-this{
+    margin:0 0 26px
+}
+.what-is-this{
+    display:inline-block;
+    color:var(--grey);
+    text-decoration:underline
+}
+.what-is-this:hover{
+    text-decoration:none
+}
+.lines[data-v-091e25d0]{
+    width:100%;
+    display:flex;
+    flex-direction:column
+}
+.line[data-v-091e25d0]{
+    --border-color:--off-white;
+    border-top:1px solid var(--border-color)
+}
+.line~.line[data-v-091e25d0]{
+    margin-top:4px
+}
